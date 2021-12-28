@@ -1,0 +1,60 @@
+h4 {
+  background: lightblue;
+  padding: 5px;
+}
+
+/* contains sets of elements */
+.set-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+/* modify the code below to satisfy PARTS 1-10 */
+/* PART 1 modifies these styles */
+/* PARTS 2 and 3 uses these styles */
+.base-set {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+/* PART 3 uses these styles */
+.second-set {
+  background: purple;
+}
+
+/* PART 4 has you add styling for h4 elements here */
+/* PART 5 - 11 use and add to the following code */
+.grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas:
+    "question question question"
+    "yes no maybe";
+}
+
+.response-button {
+  border-radius: 0px;
+  height: 40px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+#question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: 1px solid grey;
+  grid-area: question;
+}
+
+#yes-button {
+  grid-area: yes;
+  color: green;
+}
+
+/* add the id-selecting button styles here (for the no- and maybe- buttons)*/
