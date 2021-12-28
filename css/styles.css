@@ -1,0 +1,150 @@
+/*
+these are variables that can be used throughout the css file.  it's not necessary
+to use them, but they can make it easier to standardize and update the styling.
+ */
+:root {
+  --light: cornsilk;
+  --standard: #40e0d0;
+  --medium: burlywood;
+  --dark: sandybrown;
+  --font-medium: 25px;
+}
+
+/*
+this style uses the "body" element as it's selector.  html documents should
+only have one "body" element, so this is like an id in that it applies to only
+one element.  but it is NOT like an id, in that the <body> doesn't need to have
+an id added to it.  ignore the last two sentences if they are confusing.
+ */
+body {
+  background: var(--light);
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+/* this is a class for centering an element.  i ended up not using it, so i
+commented it out.  i could have deleted it, but might want to use it later. */
+/* .centered {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
+/*------------------------------*/
+/*------------------------------*/
+/*
+here are the classes for the basic compnents of the page:
+block
+  description
+  elements
+
+the "description" divs use classes to style and highlight the code snippets.
+the "examples" divs use all three kinds of slectors to create examples of the
+code snippets.
+ */
+.block {
+  flex: 1;
+  display: grid;
+  border-top: 1px solid var(--dark);
+  border-bottom: 1px solid var(--dark);
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "description elements";
+}
+
+.description {
+  border-right: 1px solid var(--medium);
+  padding: 5px;
+  grid-area: description;
+  font-size: var(--font-medium);
+}
+
+.examples {
+  grid-area: elements;
+  padding: 5px;
+}
+
+/* this is for adding top and bottom margins */
+.auto-margins {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/*------------------------------*/
+/*------------------------------*/
+/*
+these are the classes for the html and css snippets
+used in the "description" divs.
+ */
+.html-text {
+  background: honeydew;
+}
+
+.css-text {
+  background: peachpuff;
+}
+
+/*
+these classes are for the spans highlighting the parts
+of the css snippets
+ */
+.selector {
+  background: lightcoral;
+}
+
+.attribute {
+  background: yellow;
+}
+
+.value {
+  background: lavender;
+}
+
+/*------------------------------*/
+/*------------------------------*/
+/*styling for the example-side.  many of these are the same as the
+snippets seen on the "description" side. */
+#example-text {
+  font-size: var(--font-medium);
+}
+
+#first-example {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  background: blue;
+}
+
+h6 {
+  background: hotpink;
+}
+
+.selector-type {
+  font-style: italic;
+}
+
+.class-example {
+  background: orange;
+  font-family: "Comic Sans", "Comic Sans MS", cursive;
+  color: purple;
+  height: 100px;
+  width: 300px;
+}
+
+.second-class-example {
+  color: green;
+  border: 1px solid black;
+}
+
+#id-example {
+  height: 100px;
+  width: 200px;
+  background: purple;
+}
+
+#h6-id-example {
+  background: white;
+  color: blue;
+}

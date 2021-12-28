@@ -1,0 +1,362 @@
+<!--
+this is the html file.  This is a comment, code that is in the file but
+ignored by whatever is processing the file.
+-->
+
+<!-- this is the start of the html document -->
+<html>
+
+<!--
+the head includes stuff to get the page running.  the link element provides
+access to the styles.css file
+ -->
+
+<head>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<!--
+the body is where the "acutal" website usually is
+ -->
+
+<body>
+
+  <!--
+  ------
+  The ".block" Class
+  this the start of a "block" component, is a div with the "block" class
+  applied to it.  you can find the .block class defined in the styles.css file.
+
+  this document is primarily a vertical list of "blocks", each with a "description"
+  and "examples" div inside it.  the "flex" and "grid-whatever" attributes
+  control the layout of these components and the ones inside them.  We'll look
+  at exactly how they work later.
+
+  this nested structure of
+    <html>
+      <head>
+        {blah blah blah stuff here}
+      </head>
+      <body>
+        {blah blah blah stuff here}
+      </body>
+    </html>
+is part of how html documents operate.  you can add in other stuff, but this is
+more or less fixed (unless you're doing something weird).
+
+the nested structure of
+  <"block">
+    <"description">
+      {blah blah blah stuff here}
+    </"description">
+    <"examples">
+      {blah blah blah stuff here}
+    </"examples">
+  </"block">
+is how i decided to organize the code for this document.  creating rules and
+structures like this make it easier to read, write, and modify the code.
+  ------
+   -->
+  <div class="block">
+    <!--
+-----
+The ".description" Class
+here is the "description" div.
+-----
+   -->
+    <div class="description">
+      <p>
+        There are three kinds of CSS selectors we're going to go over,
+      </p>
+      <ul>
+        <li>
+          element
+        </li>
+        <li>
+          class
+        </li>
+        <li>
+          id
+        </li>
+      </ul>
+      <p>
+        element, class, and id
+      </p>
+      <p>
+        I'm going to over-simplify things in order to get us started.
+        As we go, we'll go into more detail.
+      </p>
+    </div>
+    <!--
+------
+The ".examples" Class
+here is an "examples" div.  it has two classes, "examples" and "auto-margins".
+the "auto-margins" class adds top and bottom margins to vertically center the
+stuff inside the "examples" div.  i didn't want it applied to every single "example"
+div, so put it in a separate class.
+------
+   -->
+    <div class="examples auto-margins">
+      <div id="example-text">
+        examples will appear on this side
+      </div>
+    </div>
+  </div>
+
+  <!--
+------
+this is where one "block" component ends and the next begins.
+------
+ -->
+
+  <div class="block">
+    <div class="description">
+      <p>
+        The CSS file is bascially made up of bits of code that look like this:
+      </p>
+      <!--
+-----
+The ".css-text" Class
+this paragraph element (<p>) has the "css-text" class.  i wanted to make the CSS
+and HTML code snippets visually distinct from the rest of the text.
+-----
+     -->
+      <p class="css-text">
+
+        <!--
+        these "span" components allow formatting for sections of text.
+        the "selector", "attribute", and "value" classes highlight the different
+        parts of a css class.
+        the "&emsp;" and "<br />" are tab and line-breaks that the html document
+        respects.  html documents don't care about normal whitespace characters,
+        so all these wacky symbols are necessary to format the text to look like
+        a css class.
+       -->
+
+        <span class="selector">#first-example</span> {<br />
+        &emsp;<span class="attribute">position</span>: <span class="value">relative;</span><br />
+        &emsp;<span class="attribute">top</span>: <span class="value">50%;</span><br />
+        &emsp;<span class="attribute">left</span>: <span class="value">50%</span>;<br />
+        &emsp;<span class="attribute">height</span>: <span class="value">100px</span>;<br />
+        &emsp;<span class="attribute">width</span>: <span class="value">100px</span>;<br />
+        &emsp;<span class="attribute">background</span>: <span class="value">blue</span>; <br />
+        }
+      </p>
+      <p>
+        The <span class="selector">selector</span> determines what HTML elements use this styling.
+      </p>
+      <p>
+        The <span class="attribute">attributes</span> are the, well, different style attributes an element has.
+      </p>
+      <p>
+        The <span class="value">values</span> are the values those attributes are set to.
+      </p>
+    </div>
+    <div class="examples">
+
+      <!--
+      the id "first-example" links this div to the "#first-example" styling in the
+      css file.
+     -->
+
+      <div id="first-example">
+      </div>
+    </div>
+  </div>
+
+<!--
+-----
+this next block is about using elements as css selectors.  i used an <h6> element
+as the example because there are no <h6>'s in use in this html document.  i mean,
+there are on the examples side, but not the description side.
+-----
+ -->
+
+  <div class="block">
+    <div class="description">
+      <p>
+        When you use an <span class="selector-type">HTML element</span> as the selector, all elements of that type will be styled.<br />
+        for example,
+      </p>
+      <p class="css-text">
+        h6 {<br />
+        &emsp;background: hotpink;<br />
+        }
+      </p>
+      <p>
+        will give all the <span class="html-text">&lt;h6&gt;</span>s a hot pink background.
+      </p>
+      <p>
+        An <span class="html-text">&lt;h6&gt;</span> is the smallest kind of header (there are 6 sizes of header, h1 - h6). You don't have
+        to do anything to the HTML elements to get the styling applied to them, all
+        <span class="html-text">&lt;h6&gt;</span> elements will get the styling (in this case, a pink background).
+      </p>
+      <!--
+      this paragraph contains an <a> element.  these are pretty much always links
+      to other web pages.  however, we should avoid calling them links, because
+      there is a <link /> element (there is one in the <head>, linking the css file
+      to this html file).
+     -->
+      <p>
+        You can see an unhelpfully comprehensive list of html elements <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">here</a>.
+        I have never used most of these, and probably never will.
+      </p>
+    </div>
+    <div class="examples auto-margins">
+      <h6>
+        this is an <span class="html-text">&lt;h6&gt;</span>
+      </h6>
+      <h6>
+        this is also an <span class="html-text">&lt;h6&gt;</span>
+      </h6>
+      <h5>this is an <span class="html-text">&lt;h5&gt;</span>, so no fancy background color</h5>
+      <h6>
+        this is a third <span class="html-text">&lt;h6&gt;</span>
+      </h6>
+    </div>
+  </div>
+
+  <!--
+-----
+i'm going to leave this next "block" uncommented.  Sometimes an abundance of
+comments makes it harder to see the structure of the code.
+-----
+ -->
+
+  <div class="block">
+    <div class="description">
+      <p>
+        The next selector is by <span class="selector-type">class</span>.
+      </p>
+      <p class="css-text">
+        .class-example {<br />
+        &emsp;background: orange;<br />
+        &emsp;font-family: "comic sans";<br />
+        &emsp;color: purple;<br />
+        &emsp;height: 100px;<br />
+        &emsp;width: 300px<br />
+        }
+      </p>
+      <p>
+        The elements that use this styling need to have the class added.
+      </p>
+      <p class="html-text">
+        &lt;div class="class-example"&gt;&lt;/div&gt;
+      </p>
+      <p>
+        Because classes have a period before their name, you could have:
+      </p>
+      <p class="css-text">
+        p {<br />
+        &emsp;color:blue;<br />
+        } <br />
+        .p {<br />
+        &emsp;color: orange;<br />
+        }
+      </p>
+      <p>
+        <span class="html-text">&lt;p&gt;</span> elements would have a blue background, and anything given the
+        class "p" would have an orange background. This would be really confusing,
+        and probably a bad idea.
+      </p>
+    </div>
+    <div class="examples">
+      <button class="class-example">button</button>
+      <div class="class-example">
+        div
+      </div>
+      <input class="class-example" value="text input" />
+      <p>
+        *note that these three different elements (button, div, input) all look very similar,
+        because they have the same CSS class
+      </p>
+    </div>
+  </div>
+
+<!--
+-----
+that's the end of that "block"!
+the "description" side has classes applied to paragraphs and spans to style the
+html and css snippets.
+the "examples" has the same class applied to a variety of different elements.
+-----
+ -->
+
+  <div class="block">
+    <div class="description">
+      <p>
+        The third kind of selector is by <span class="selector-type">id</span>.
+      </p>
+      <p class="css-text">
+        #id-example {<br />
+        &emsp;height: 100px;<br />
+        &emsp;width: 200px;<br />
+        &emsp;background: purple;<br />
+        }
+      </p>
+      <p class="html-text">
+        &lt;div id="id-example"&gt;&lt;/div&gt;
+      </p>
+      <p>
+        An id used basically the same way as a class, except a hash is used instead
+        of a period in the CSS file, and <span class="selector-type">id</span> is
+        used instead of <span class="selector-type">class</span> in the HTML element.
+      </p>
+      <p>
+        An id should only be applied to a single HTML element. <br />
+        Firstly, it's confusing to have multiple elements with the same id, and other
+        developers won't understand what your intent was.<br />
+        Secondly, we'll use id's later to find and change HTML elements. Having duplicate
+        id's can create undesirable results.
+      </p>
+    </div>
+    <div class="examples auto-margins">
+      <div id="id-example">
+      </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="description">
+      <p>
+        Selectors override each other by specificity. An <span class="selector-type">id</span> will override
+        a <span class="selector-type">class</span>, which will override <span class="selector-type">element</span> styling.
+      </p>
+    </div>
+    <div class="examples">
+      <h6>here is an h6 with no class or id</h6>
+      <h6 class="class-example">this h6 uses the class-example class</h6>
+      <h6 class="class-example" id="h6-id-example">this h6 has a class and and id</h6>
+    </div>
+  </div>
+  <div class="block">
+    <div class="description">
+      <p>
+        Selectors also override each other if they are further down the CSS document. For example,
+        if both of these classes are applied to an element, it's color will be green instead of purple,
+        because <span class="css-text">second-class-example</span> is further down the CSS sheet.
+      </p>
+      <p class="css-text">
+        .class-example{<br />
+        &emsp;background: orange;<br />
+        &emsp;font-family: "Comic Sans", "Comic Sans MS", cursive;<br />
+        &emsp;color: purple;<br />
+        &emsp;height: 100px;<br />
+        &emsp;width: 300px;<br />
+        }<br /><br />
+        .second-class-example {<br />
+        &emsp;color: green;<br />
+        }
+      </p>
+    </div>
+    <div class="examples">
+      <div class="class-example second-class-example">
+        this div has the classes class-example and second-class-example
+      </div>
+      <div class="second-class-example class-example">
+        this div has the two classes, in the opposite order. The class second in the CSS file still takes precedence.
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
